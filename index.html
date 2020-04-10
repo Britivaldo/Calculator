@@ -8,7 +8,6 @@
     <title>Calculator</title>
     <style>
         body, html {
-           
             font-family: 'Roboto';
             font-size: 30px;
             color: white;
@@ -46,7 +45,6 @@
             border: none;
         }
     </style>
-
 </head>
 <body>
     <div id="container">
@@ -55,7 +53,7 @@
         <button id="btn-CE" class="keybtn">CE</button>
         <button id="btn-Md" class="keybtn">%</button>
         <button id="btn-D" class="keybtn">/</button>
-        <button id="btn-7" class="keycolor">7</button>
+        <button id="btn-7" class="keycolor" onclick="calc(event)" value="7">7</button>
         <button id="btn-8" class="keycolor">8</button>
         <button id="btn-9" class="keycolor">9</button>
         <button id="btn-Mu" class="keybtn">*</button>
@@ -66,10 +64,90 @@
         <button id="btn-1" class="keycolor">1</button>
         <button id="btn-2" class="keycolor">2</button>
         <button id="btn-3" class="keycolor">3</button>
-        <button id="btn-Sum" class="keybtn">+</button>
+        <button id="btn-Sum" class="keybtn" onclick="calc(event)" value="+">+</button>
         <button id="btn-0" class="keycolor">0</button>
         <button id="btn-P" class="keycolor">.</button>
-        <button id="btn-R" class="keybtn">=</button>
+        <button id="btn-R" class="keybtn" onclick="igual()">=</button>
     </div>
+
+    <script>
+        let number = 0;
+        let i = 0;
+        let op1 = 0;
+        let fun = '';
+        let op2 = 0;
+        let result = [];
+        let cont = 0;
+        let display = document.querySelector("#display");
+
+        function calc(e){
+            number = e.target.value;
+
+            switch (number) {
+                case '7':
+                    result[cont++] = '7';
+                    if(i == 0){
+                        op1 = ex();
+                    }else if(i == 1){
+                        op2 = ex();
+                    }
+                    break;
+                case '8':
+                    break;
+                case '9':
+                    break;
+                case '6':
+                    break;
+                case '5':
+                    break;
+                case '4':
+                    break;
+                case '3':
+                    break;
+                case '2':
+                    break;
+                case '1':
+                    break;
+                case '0':
+                    break;
+                case '+':
+                    if( i == 0 ){
+                        result = [];
+                        cont = 0;
+                        fun = '+';
+                        i = 1;
+                    }else if ( i == 1 ){
+                        i = 0;
+                        result = [];
+                        cont = 0;
+                        igual(fun);
+                    }
+                    break;
+                case '-':
+                    break;
+                case '/':
+                    break;
+                case '*':
+                    break;
+            }
+
+        }
+
+        function ex(){
+            let valor = result.reduce((acumulador, value)=>{
+                return acumulador + value;
+            });
+
+            return parseInt(valor, 10);
+        }
+
+        function igual(fun){
+            if(fun == '+'){
+                console.log(op1 + op2);
+            }
+        }
+
+
+    </script>
 </body>
 </html>
