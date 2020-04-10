@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Calculator</title>
+    <style>
+        body, html {
+           
+            font-family: 'Roboto';
+            font-size: 30px;
+            color: white;
+        }
+        #display {
+            background: rgb(76, 75, 75);
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        #btn-C {
+           
+        }
+        #btn-0 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        #container {
+            margin: auto;
+            text-align: center;
+            width: 320px;
+            height: 560px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+            
+        }
+
+        .keycolor {
+            background: #17181b;
+            border: none;
+        }
+        .keybtn {
+            background: #232429;
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <button id="btn-C" class="keybtn">C</button>
+        <button id="btn-CE" class="keybtn">CE</button>
+        <button id="btn-Md" class="keybtn">%</button>
+        <button id="btn-D" class="keybtn">/</button>
+        <button id="btn-7" class="keycolor">7</button>
+        <button id="btn-8" class="keycolor">8</button>
+        <button id="btn-9" class="keycolor">9</button>
+        <button id="btn-Mu" class="keybtn">*</button>
+        <button id="btn-4" class="keycolor">4</button>
+        <button id="btn-5" class="keycolor">5</button>
+        <button id="btn-6" class="keycolor">6</button>
+        <button id="btn-Su" class="keybtn">-</button>
+        <button id="btn-1" class="keycolor">1</button>
+        <button id="btn-2" class="keycolor">2</button>
+        <button id="btn-3" class="keycolor">3</button>
+        <button id="btn-Sum" class="keybtn">+</button>
+        <button id="btn-0" class="keycolor">0</button>
+        <button id="btn-P" class="keycolor">.</button>
+        <button id="btn-R" class="keybtn">=</button>
+    </div>
+</body>
+</html>
