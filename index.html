@@ -14,6 +14,9 @@
         }
         #display {
             background: rgb(76, 75, 75);
+            font-size: 90px;
+            padding-left: 20%;
+            padding-top: 10%;
             grid-column-start: 1;
             grid-column-end: 5;
         }
@@ -88,80 +91,100 @@
                     result[cont++] = '7';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '8':
                     result[cont++] = '8';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '9':
                     result[cont++] = '9';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '6':
                     result[cont++] = '6';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '5':
                     result[cont++] = '5';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '4':
                     result[cont++] = '4';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '3':
                     result[cont++] = '3';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;                    
                     }
                     break;
                 case '2':
                     result[cont++] = '2';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2; 
                     }
                     break;
                 case '1':
                     result[cont++] = '1';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '0':
                     result[cont++] = '0';
                     if(i == 0){
                         op1 = ex();
+                        display.innerHTML = op1;
                     }else if(i == 1){
                         op2 = ex();
+                        display.innerHTML = op2;
                     }
                     break;
                 case '+':
@@ -175,6 +198,7 @@
                         result = [];
                         cont = 0;
                         op1 = igual(fun);
+                        display.innerHTML = op1;
                     }
                     break;
                 case '-':
@@ -193,6 +217,7 @@
                     }
                     break;
                 case 'CE':
+                        display.innerHTML = ' ';
                         result = [];
                         cont = 0;
                         i = 0;
