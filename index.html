@@ -11,6 +11,7 @@
             font-family: 'Roboto';
             font-size: 30px;
             color: white;
+            box-sizing: boder-box;
         }
         button {
             color: white;
@@ -19,12 +20,20 @@
             outline: none;
         }
         #display {
+            padding: 10px;
             background: rgb(76, 75, 75);
+            text-align: right;
             font-size: 90px;
-            padding-left: 20%;
-            padding-top: 10%;
             grid-column-start: 1;
             grid-column-end: 5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (overflow-inline: scroll){
+            #display {
+                color: blue;
+            }
         }
         #btn-C {
            
@@ -42,7 +51,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
-            
         }
 
         .keycolor {
@@ -61,15 +69,15 @@
         <button id="btn-C" class="keybtn" onclick="calc(event)" value="C">C</button>
         <button id="btn-CE" class="keybtn" onclick="calc(event)" value="CE">CE</button>
         <button id="btn-Md" class="keybtn">%</button>
-        <button id="btn-D" class="keybtn">/</button>
+        <button id="btn-D" class="keybtn" onclick="calc(event)" value="/">/</button>
         <button id="btn-7" class="keycolor" onclick="calc(event)" value="7">7</button>
         <button id="btn-8" class="keycolor" onclick="calc(event)" value="8">8</button>
         <button id="btn-9" class="keycolor" onclick="calc(event)" value="9">9</button>
-        <button id="btn-Mu" class="keybtn">*</button>
+        <button id="btn-Mu" class="keybtn" onclick="calc(event)" value="*" >*</button>
         <button id="btn-4" class="keycolor" onclick="calc(event)" value="4">4</button>
         <button id="btn-5" class="keycolor" onclick="calc(event)" value="5">5</button>
         <button id="btn-6" class="keycolor" onclick="calc(event)" value="6">6</button>
-        <button id="btn-Su" class="keybtn">-</button>
+        <button id="btn-Su" class="keybtn" onclick="calc(event)" value="-">-</button>
         <button id="btn-1" class="keycolor" onclick="calc(event)" value="1">1</button>
         <button id="btn-2" class="keycolor" onclick="calc(event)" value="2">2</button>
         <button id="btn-3" class="keycolor" onclick="calc(event)" value="3">3</button>
@@ -194,6 +202,7 @@
                     }
                     break;
                 case '+':
+                    console.log('soma', fun);
                     if( i == 0 ){
                         result = [];
                         cont = 0;
@@ -201,25 +210,68 @@
                         i = 1;
                     }else if ( i == 1 ){
                         //i = 0;
+
                         result = [];
                         cont = 0;
                         op1 = igual(fun);
+                        op2 = 0;
                         display.innerHTML = op1;
                     }
                     break;
                 case '-':
+                    if( i == 0 ){
+                        result = [];
+                        cont = 0;
+                        fun = '-';
+                        i = 1;
+                    }else if ( i == 1 ){
+                        //i = 0;
+                        result = [];
+                        cont = 0;
+                        op1 = igual(fun);
+                        op2 = 0;
+                        display.innerHTML = op1;
+                    }
                     break;
                 case '/':
+                    if( i == 0 ){
+                        result = [];
+                        cont = 0;
+                        fun = '/';
+                        i = 1;
+                    }else if ( i == 1 ){
+                        //i = 0;
+                        result = [];
+                        cont = 0;
+                        op1 = igual(fun);
+                        op2 = 0;
+                        display.innerHTML = op1;
+                    }
                     break;
                 case '*':
+                    if( i == 0 ){
+                        result = [];
+                        cont = 0;
+                        fun = '-';
+                        i = 1;
+                    }else if ( i == 1 ){
+                        //i = 0;
+                        result = [];
+                        cont = 0;
+                        op1 = igual(fun);
+                        op2 = 0;
+                        display.innerHTML = op1;
+                    }
                     break;
                 case 'C':
                         result = [];
                         cont = 0;
                     if ( i == 0 ){
                         op1 = 0;
+                        display.innerHTML = ' ';
                     }else if( i == 1){
                         op2 = 0;
+                        display.innerHTML = ' ';
                     }
                     break;
                 case 'CE':
@@ -232,7 +284,7 @@
                     break;
             }
 
-            console.log(' op1: ' + op1 +' op2: '+ op2+ ' r: '+ result + ' cont: '+ cont);
+            console.log(' op1: ' + op1 +' op2: '+ op2+ ' r: '+ result + ' cont: '+ cont + ' i:'+ i);
 
             //display.innerHTML = op1;
 
@@ -247,8 +299,15 @@
         }
 
         function igual(fun){
+            console.log(fun)
             if(fun == '+'){
                 return op1 + op2;
+            }else if (fun == '-'){
+                return op1 - op2;
+            }else if (fun == '/'){
+                return op1 / op2;
+            }else if(fun == '*'){
+                return op1 * op2;
             }
         }
 
