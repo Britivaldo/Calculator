@@ -83,8 +83,8 @@
         <button id="btn-3" class="keycolor" onclick="calc(event)" value="3">3</button>
         <button id="btn-Sum" class="keybtn" onclick="calc(event)" value="+">+</button>
         <button id="btn-0" class="keycolor" onclick="calc(event)" value="0">0</button>
-        <button id="btn-P" class="keycolor">.</button>
-        <button id="btn-R" class="keybtn" onclick="igual()">=</button>
+        <button id="btn-P" class="keycolor" onclick="calc(event)" value=".">.</button>
+        <button id="btn-R" class="keybtn" onclick="calc(event)" value="=">=</button>
     </div>
 
     <script>
@@ -281,24 +281,32 @@
                         op1 = 0;
                         op2 = 0;
                     break;
+                case '.':
+                    result[cont++] = '.';
+                    break;
+                case '=':
+                        result = [];
+                        cont = 0;
+                        i = 0;
+                        op1 = igual(fun);
+                        op2 = 0;
+                        display.innerHTML = op1;
+                    break;
             }
 
             console.log(' op1: ' + op1 +' op2: '+ op2+ ' r: '+ result + ' cont: '+ cont + ' i:'+ i);
-
-            //display.innerHTML = op1;
-
         }
 
         function ex(){
             let valor = result.reduce((acumulador, value)=>{
                 return acumulador + value;
             });
-
-            return parseInt(valor, 10);
+            console.log(valor);
+            return parseFloat(valor, 10);
         }
 
         function igual(fun){
-            console.log(fun)
+            console.log(fun);
             if(fun == '+'){
                 return op1 + op2;
             }else if (fun == '-'){
